@@ -1,19 +1,19 @@
 # 用户：夜卜小魔王
 # 正则化 梯度下降
-# 正则化的好处: 较好地避免了过拟合
+# 正则化的好处: 较好地避免了过拟合 -> 最好在较容易出现过拟合时采用这种方法 否则会导致欠拟合
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def compute_cost(X, Y, Theta, gama=100):  # 代价函数中要加入正规化的项
+def compute_cost(X, Y, Theta, gama=1000):  # 代价函数中要加入正规化的项
     inner = np.power((X*Theta-Y), 2)
     inner_ = np.power(Theta, 2)
     return (np.sum(inner)+gama*np.sum(inner_))/(2*len(X))
 
 
-def gradient_descent(X, Y, Theta, alpha=0.01, iterations=1000, gama=100):  # 使用正则化 一般不对theta(0)进行正则化
+def gradient_descent(X, Y, Theta, alpha=0.01, iterations=1000, gama=1000):  # 使用正则化 一般不对theta(0)进行正则化
     temp = np.matrix(np.zeros(Theta.shape))
     parameters = int(Theta.ravel().shape[1])
     cost_ = np.zeros(iterations)
