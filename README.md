@@ -7,3 +7,4 @@
 ###### *Chapter 3 逻辑回归*
 ###### *Chapter 4 神经网络*
 ###### *Chapter 5 支持向量机*
+###### *Chapter 6 聚类*
